@@ -53,7 +53,16 @@ const Projects = ({ isDarkMode }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="kawaii-card group"
+              className="kawaii-card group card-3d"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect()
+                const x = e.clientX - rect.left - rect.width / 2
+                const y = e.clientY - rect.top - rect.height / 2
+                e.currentTarget.style.transform = `perspective(1000px) rotateY(${x / 10}deg) rotateX(${-y / 10}deg) translateZ(20px)`
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px)'
+              }}
             >
               <div className="mb-4 text-center">
                 <img 
