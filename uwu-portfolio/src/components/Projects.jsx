@@ -42,7 +42,7 @@ const Projects = ({ isDarkMode }) => {
             isDarkMode ? 'text-white' : 'text-gray-800'
           }`}
         >
-          My Projects 🧠
+          My Projects
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -73,9 +73,13 @@ const Projects = ({ isDarkMode }) => {
                 <div className="text-2xl">{project.image}</div>
               </div>
               
-              <h3 className="font-kawaii text-xl mb-3 text-gray-800">{project.title}</h3>
+              <h3 className={`font-kawaii text-xl mb-3 ${
+                isDarkMode ? 'text-white' : 'text-gray-800'
+              }`}>{project.title}</h3>
               
-              <p className="font-cute text-gray-600 mb-4 text-sm leading-relaxed">
+              <p className={`font-cute mb-4 text-sm leading-relaxed ${
+                isDarkMode ? 'text-gray-200' : 'text-gray-600'
+              }`}>
                 {project.description}
               </p>
               
@@ -83,7 +87,11 @@ const Projects = ({ isDarkMode }) => {
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-kawaii-pink/20 text-kawaii-pink rounded-full text-xs font-cute"
+                    className={`px-3 py-1 rounded-full text-xs font-cute ${
+                      isDarkMode 
+                        ? 'bg-white/20 text-white' 
+                        : 'bg-kawaii-pink/20 text-kawaii-pink'
+                    }`}
                   >
                     {tech}
                   </span>
@@ -94,6 +102,8 @@ const Projects = ({ isDarkMode }) => {
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 bg-kawaii-pink/80 text-white py-2 px-4 rounded-full text-center font-cute text-sm flex items-center justify-center gap-2 hover:bg-kawaii-pink transition-colors cursor-pointer"
                 >
                   <ExternalLink size={16} />
@@ -102,6 +112,8 @@ const Projects = ({ isDarkMode }) => {
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 bg-gray-600 text-white py-2 px-4 rounded-full text-center font-cute text-sm flex items-center justify-center gap-2 hover:bg-gray-700 transition-colors cursor-pointer"
                 >
                   <Github size={16} />

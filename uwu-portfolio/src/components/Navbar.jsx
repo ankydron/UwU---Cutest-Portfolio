@@ -11,16 +11,18 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="font-kawaii text-2xl text-gray-800"
+          className={`font-kawaii text-2xl ${
+            isDarkMode ? 'text-gray-800' : 'text-gray-800'
+          }`}
         >
           💖 ANKUR
         </motion.div>
 
         <div className="flex items-center gap-6">
           <nav className="hidden md:flex gap-6 font-cute font-medium">
-            <a href="#about" className="hover:text-kawaii-pink transition-colors">About 🌸</a>
-            <a href="#projects" className="hover:text-kawaii-pink transition-colors">Projects 🍰</a>
-            <a href="#contact" className="hover:text-kawaii-pink transition-colors">Contact 💌</a>
+            <a href="#about" className="hover:text-kawaii-pink transition-colors">About</a>
+            <a href="#projects" className="hover:text-kawaii-pink transition-colors">Projects</a>
+            <a href="#contact" className="hover:text-kawaii-pink transition-colors">Contact</a>
           </nav>
 
           <motion.button

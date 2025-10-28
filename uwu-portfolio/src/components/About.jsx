@@ -56,7 +56,7 @@ const About = ({ isDarkMode }) => {
               isDarkMode ? 'text-white' : 'text-gray-800'
             }`}
           >
-            About Me 💫
+            About Me
           </motion.h2>
 
           <motion.div
@@ -82,7 +82,7 @@ const About = ({ isDarkMode }) => {
               isDarkMode ? 'text-white' : 'text-gray-800'
             }`}
           >
-            🛠️ What I Do
+            What I Do
           </motion.h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -98,8 +98,12 @@ const About = ({ isDarkMode }) => {
                 <div className="text-kawaii-pink mb-3 flex justify-center">
                   {item.icon}
                 </div>
-                <h4 className="font-kawaii text-lg text-gray-800 mb-2">{item.text}</h4>
-                <p className="font-cute text-sm text-gray-600">{item.detail}</p>
+                <h4 className={`font-kawaii text-lg mb-2 ${
+                  isDarkMode ? 'text-white' : 'text-gray-800'
+                }`}>{item.text}</h4>
+                <p className={`font-cute text-sm ${
+                  isDarkMode ? 'text-gray-200' : 'text-gray-600'
+                }`}>{item.detail}</p>
               </motion.div>
             ))}
           </div>
@@ -115,7 +119,7 @@ const About = ({ isDarkMode }) => {
               isDarkMode ? 'text-white' : 'text-gray-800'
             }`}
           >
-            Skills 💻
+            Skills
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -136,7 +140,9 @@ const About = ({ isDarkMode }) => {
                   e.currentTarget.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)'
                 }}
               >
-                <h3 className="font-kawaii text-xl text-gray-800 mb-4 text-center">{category}</h3>
+                <h3 className={`font-kawaii text-xl mb-4 text-center ${
+                  isDarkMode ? 'text-white' : 'text-gray-800'
+                }`}>{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill, skillIndex) => (
                     <motion.span
@@ -145,7 +151,11 @@ const About = ({ isDarkMode }) => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: (categoryIndex * 0.2) + (skillIndex * 0.05) }}
                       whileHover={{ scale: 1.1 }}
-                      className="px-3 py-1 bg-kawaii-pink/20 text-kawaii-pink rounded-full text-xs font-cute cursor-default flex items-center gap-1"
+                      className={`px-3 py-2 rounded-full text-sm font-cute cursor-default flex items-center gap-1 ${
+                        isDarkMode 
+                          ? 'bg-white/20 text-white border border-white/30' 
+                          : 'bg-kawaii-pink/30 text-gray-800 border border-kawaii-pink/40'
+                      }`}
                     >
                       <span>{skill.icon}</span>
                       {skill.name}
