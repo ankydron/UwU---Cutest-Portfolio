@@ -11,11 +11,11 @@ const Hero = ({ isDarkMode }) => {
           transition={{ duration: 0.8, type: "spring" }}
           className="mb-8"
         >
-          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-kawaii-pink to-kawaii-lavender rounded-full flex items-center justify-center shadow-2xl overflow-hidden">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-kawaii-pink to-kawaii-lavender rounded-none flex items-center justify-center shadow-2xl overflow-hidden" style={{ border: '4px solid #1A1A1A', boxShadow: '8px 8px 0px #3D3663' }}>
             <img 
-              src="/mori-buntarou.jpeg" 
+              src="/profile-pixel.jpg" 
               alt="ANKUR" 
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover pixelated"
             />
           </div>
         </motion.div>

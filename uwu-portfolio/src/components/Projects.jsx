@@ -104,7 +104,7 @@ const Projects = ({ isDarkMode }) => {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-kawaii-pink/80 text-white py-2 px-4 rounded-full text-center font-cute text-sm flex items-center justify-center gap-2 hover:bg-kawaii-pink transition-colors cursor-pointer"
+                  className="flex-1 pixel-button text-center font-cute text-sm flex items-center justify-center gap-2"
                 >
                   <ExternalLink size={16} />
                   Live Demo
@@ -114,7 +114,8 @@ const Projects = ({ isDarkMode }) => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-gray-600 text-white py-2 px-4 rounded-full text-center font-cute text-sm flex items-center justify-center gap-2 hover:bg-gray-700 transition-colors cursor-pointer"
+                  className="flex-1 bg-gray-600 text-white border-3 border-black rounded-none font-cute text-sm flex items-center justify-center gap-2 hover:bg-gray-700 transition-none"
+                  style={{ border: '3px solid #1A1A1A', boxShadow: '4px 4px 0px #3D3663' }}
                 >
                   <Github size={16} />
                   Code
